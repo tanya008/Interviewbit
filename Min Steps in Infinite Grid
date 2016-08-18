@@ -1,0 +1,15 @@
+int Solution::coverPoints(vector<int> &X, vector<int> &Y) {
+    
+   
+       int totalStep = 0;
+        int currentX = X[0];
+       int  currentY = Y[0];
+        for(int i=1;i<X.size();i++)
+            {
+                totalStep += max(abs(currentX - X[i] ), abs(currentY - Y[i]));
+                currentX = X[i];
+                currentY = Y[i];
+            }
+        return totalStep;
+
+}
